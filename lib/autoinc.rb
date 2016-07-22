@@ -68,7 +68,7 @@ module Mongoid
       #   end
       def increments(field, options = {})
         incrementing_fields[field] = options.reverse_merge!(auto: true)
-        attr_protected(field) if respond_to?(:attr_protected)
+        attr_reader(field) if respond_to?(:attr_reader)
       end
     end
 
